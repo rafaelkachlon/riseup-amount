@@ -1,7 +1,6 @@
 const interval = setInterval(() => {
   const containers = document.querySelectorAll('.cards-container');
-  if (!!containers.length && window.location.href.includes('balance')) {
-    clearInterval(interval);
+  if (!!containers.length && window.location.href.includes('balance') && !document.querySelector('#total')) {
     var cards = containers[containers.length - 1].querySelectorAll('.amount');
 
     const total = [...cards].reduce((acc, curr) => {
@@ -11,6 +10,7 @@ const interval = setInterval(() => {
 
     const disclaimer = document.querySelector('.credit-card-disclaimer');
     var totalSpan = document.createElement('span');
+    totalSpan.id = 'total';
     totalSpan.style.float = 'left';
     totalSpan.innerText = total.toLocaleString();
     totalSpan.style.direction = 'ltr';
