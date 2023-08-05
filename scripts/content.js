@@ -1,6 +1,6 @@
 const interval = setInterval(() => {
   const containers = document.querySelectorAll('.cards-container');
-  if (!!containers.length) {
+  if (!!containers.length && window.location.href.includes('balance')) {
     clearInterval(interval);
     var cards = containers[containers.length - 1].querySelectorAll('.amount');
 
