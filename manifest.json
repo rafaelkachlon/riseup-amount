@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "RiseUp Amount",
+  "version": "1.0",
+  "description": "Add total amount to RiseUp balance page",
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://input.riseup.co.il/*"],
+      "run_at": "document_end"
+    }
+  ]
+}
